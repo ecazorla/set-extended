@@ -1,34 +1,41 @@
-class SuperSet extends Set {
-    toArray() {
-        const setValues = this.values();
-        let outputArray = [];
+const unionSet = (...args) => {
+    this.returnSet = new Set();
+    this.errorList = [];
 
-        for (let value of setValues) {
-            outputArray.push(value);
+    // Validate that all parameters are either sets or supersets
+    args.forEach((arg, key) => {
+        if (!(arg instanceof Set)) {
+            this.errorList.push([arg, key]);
         }
+    });
 
-        return outputArray;
+    if (this.errorList.length > 0) {
+        throw new Error(`${this.errorList.map(error => `arg[${error[1]}] ${error[0]} is not a valid type set or superset`).join(', ')}`);
     }
 
-    union(addingSet) {
-        const initialSet = new Set(this);
-        if (addingSet instanceof SuperSet) {
-            addingSet.forEach(value => {
-                initialSet.add(value);
-            });
+    args.forEach(arg => {
+        arg.forEach(value => {
+            this.returnSet.add(value);
+        })
+    });
 
-            return new SuperSet(initialSet);
-        } else {
-            throw new Error('the adding object is not type SuperSet');
-        }
-    }
+    return new Set(this.returnSet);
 }
 
-const a = new SuperSet([1,2,3]);
-const b = new SuperSet([3,4,5]);
+const toArray = (arg) => {
+    if (!(arg instanceof Set)) {
+        throw new Error('argument is not a valid type set');
+    }
 
-const c = a.union(b);
-console.log(a);
-console.log(b);
-console.log(c);
+    this.setValues = arg.values();
+    this.outputArray = [];
 
+    for (let value of this.setValues) {
+        this.outputArray.push(value);
+    }
+
+    return this.outputArray;
+}
+
+exports.union = unionSet;
+exports.toArray = toArray;
