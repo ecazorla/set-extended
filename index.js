@@ -1,14 +1,18 @@
+
+
+const fn = {
+    checkAllSet: (args) => {
+        // Validate that all parameters are either sets or supersets
+        // returns an array with the incorrect parameters
+        return args.filter(arg => !(arg instanceof Set)).map((arg, key) => [arg, key]);
+    }
+}
+
 const superSet = {
     union: (...args) => {
         this.returnSet = new Set();
         this.errorList = [];
-    
-        // Validate that all parameters are either sets or supersets
-        args.forEach((arg, key) => {
-            if (!(arg instanceof Set)) {
-                this.errorList.push([arg, key]);
-            }
-        });
+        this.errorList = this.errorList.concat(fn.checkAllSet(args));
     
         if (this.errorList.length > 0) {
             throw new Error(`${this.errorList.map(error => `arg[${error[1]}] ${error[0]} is not a valid type set or superset`).join(', ')}`);
