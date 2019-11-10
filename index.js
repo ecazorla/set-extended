@@ -5,8 +5,23 @@ class SuperSet extends Set {
 
     get cardinal () {
         let cardinalCount = 0;
-        this.forEach(() => {cardinalCount++})
+        this.forEach(() => {cardinalCount++});
         return cardinalCount;
+    }
+
+    complement(arg) {
+        if (!fn.isSetOrSuperSet(arg)) {
+            throw new Error(`${arg} is not a valid type set or superset`);
+        }
+
+        let returnSet = new SuperSet();
+        this.forEach(value => {
+            if (!arg.has(value)) {
+                returnSet.add(value);
+            }
+        });
+
+        return returnSet;
     }
 }
 
@@ -29,7 +44,7 @@ const fn = {
 
 const superSet = {
     union: (...args) => {
-        this.returnSet = new Set();
+        this.returnSet = new SuperSet();
         this.errorList = [];
         this.errorList = this.errorList.concat(fn.checkAllSet(args));
     
@@ -43,7 +58,34 @@ const superSet = {
             })
         });
     
-        return new Set(this.returnSet);
+        return this.returnSet;
+    },
+
+    intersection: (...args) => {
+        this.returnSet = new SuperSet();
+        this.errorList = [];
+        this.errorList = this.errorList.concat(fn.checkAllSet(args));
+    
+        if (this.errorList.length > 0) {
+            throw new Error(`${this.errorList.map(error => `arg[${error[1]}] ${error[0]} is not a valid type set or superset`).join(', ')}`);
+        }
+
+        if (args[0]) {
+            args[0].forEach(value => {
+                let valueIsInAllSets = true;
+                for (let index = 1; index < args.length; index++) {
+                    if (!args[index].has(value)) {
+                        valueIsInAllSets = false;
+                    }
+                }
+
+                if (valueIsInAllSets) {
+                    this.returnSet.add(value)
+                }
+            })
+        }
+
+        return this.returnSet;
     },
     
     toArray: (arg) => {
