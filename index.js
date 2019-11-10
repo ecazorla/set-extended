@@ -1,4 +1,14 @@
+class SuperSet extends Set {
+    constructor(set) {
+        super(set);
+    }
 
+    get cardinal () {
+        let cardinalCount = 0;
+        this.forEach(() => {cardinalCount++})
+        return cardinalCount;
+    }
+}
 
 const fn = {
     checkAllSet: (args) => {
@@ -40,6 +50,10 @@ const superSet = {
         }
     
         return this.outputArray;
+    },
+
+    of: (arg) => {
+        return new SuperSet(arg);
     }
 }
 
