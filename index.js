@@ -47,8 +47,8 @@ const superSet = {
     },
     
     toArray: (arg) => {
-        if (!(arg instanceof Set)) {
-            throw new Error('argument is not a valid type set');
+        if (!fn.isSetOrSuperSet(arg)) {
+            throw new Error('argument is not a valid type set or superset');
         }
     
         this.setValues = arg.values();
