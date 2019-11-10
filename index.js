@@ -11,10 +11,19 @@ class SuperSet extends Set {
 }
 
 const fn = {
+    isSet: (arg) => {
+        return arg instanceof Set
+    },
+    isSuperSet: (arg) => {
+        return arg instanceof SuperSet
+    },
+    isSetOrSuperSet: (arg) => {
+        return fn.isSet(arg) || fn.isSuperSet(arg);
+    },
     checkAllSet: (args) => {
         // Validate that all parameters are either sets or supersets
         // returns an array with the incorrect parameters
-        return args.filter(arg => !(arg instanceof Set)).map((arg, key) => [arg, key]);
+        return args.filter(arg => !fn.isSetOrSuperSet(arg)).map((arg, key) => [arg, key]);
     }
 }
 
