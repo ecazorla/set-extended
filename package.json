@@ -1,5 +1,5 @@
 {
-  "name": "super-set",
+  "name": "set-extended",
   "version": "0.0.1",
   "description": "This module extends the default functionalities of the Set class built in JS",
   "main": "index.js",
