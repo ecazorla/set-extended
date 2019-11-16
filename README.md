@@ -21,7 +21,9 @@ const SuperSet = require('set-extender');
 ### Evaluate if a set is a subset of a set: 
 > _MySet.subsetOf(A)_
 
+<p align="center">
 ![equation](https://latex.codecogs.com/svg.latex?A%20%3D%20%5C%7B1%2C%202%5C%7D%2C%20B%20%3D%20%5C%7B1%2C%202%2C%203%2C%204%2C%205%5C%7D%20%5Cimplies%20A%20%5Csubset%20B%2C%20A%20%5Cnsubseteq%20B%20%5C%5C)
+</p>
 
 ```
 const A = SuperSet.of([1,2]);
