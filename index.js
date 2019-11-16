@@ -9,7 +9,7 @@ class SuperSet extends Set {
         return cardinalCount;
     }
 
-    complement(arg) {
+    difference(arg) {
         if (!fn.isSetOrSuperSet(arg)) {
             throw new Error(`${arg} is not a valid type set or superset`);
         }
@@ -22,6 +22,17 @@ class SuperSet extends Set {
         });
 
         return returnSet;
+    }
+
+    symmetricDifference(arg) {
+        if (!fn.isSetOrSuperSet(arg)) {
+            throw new Error(`${arg} is not a valid type set or superset`);
+        }
+
+        let differenceAtoB = this.difference(arg);
+        let differenceBtoA = arg.difference(this);
+
+        return superSet.union(differenceAtoB, differenceBtoA);
     }
 
     subsetOf(arg) {
