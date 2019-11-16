@@ -1,6 +1,6 @@
 {
   "name": "set-extended",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "This module extends the default functionalities of the Set class built in JS",
   "homepage": "https://github.com/ecazorla/set-extended",
   "keywords": ["set", "math", "extend", "class", "superset", "theory"],
@@ -9,5 +9,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Esteban Cazorla",
-  "license": "ISC"
+  "license": "MIT"
 }
