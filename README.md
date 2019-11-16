@@ -20,13 +20,7 @@ const SuperSet = require('set-extender');
 
 ### Evaluate if a set is a subset of a set: 
 #### _MySet.subsetOf(A)_
-$$
-A = \{1, 2\} \\
-B = \{1, 2, 3, 4, 5\} \\
-\implies \\
-A \subset B \\
-A \nsubseteq B \\
-$$
+![equation](https://latex.codecogs.com/svg.latex?A%20%3D%20%5C%7B1%2C%202%5C%7D%20%5C%5C%20B%20%3D%20%5C%7B1%2C%202%2C%203%2C%204%2C%205%5C%7D%20%5C%5C%20%5Cimplies%20%5C%5C%20A%20%5Csubset%20B%20%5C%5C%20A%20%5Cnsubseteq%20B%20%5C%5C)
 
 ```
 const A = SuperSet.of([1,2]);
