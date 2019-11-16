@@ -23,6 +23,25 @@ class SuperSet extends Set {
 
         return returnSet;
     }
+
+    subsetOf(arg) {
+        if (!fn.isSetOrSuperSet(arg)) {
+            throw new Error(`${arg} is not a valid type set or superset`);
+        }
+
+        let isSubset = true;
+        this.forEach(value => {
+            if (!arg.has(value)) {
+                isSubset = false;
+            }
+        });
+
+        return isSubset;
+    }
+
+    equals(arg) {
+        return this.subsetOf(arg) && arg.subsetOf(this);
+    }
 }
 
 const fn = {
