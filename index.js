@@ -70,6 +70,10 @@ class SuperSet extends Set {
         return isSubset;
     }
 
+    subsetOrEqualTo(arg) {
+        return this.subsetOf(arg) || this.equals(arg);
+    }
+
     equals(arg) {
         return this.subsetOf(arg) && arg.subsetOf(this);
     }
