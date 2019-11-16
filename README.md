@@ -87,7 +87,7 @@ SuperSet [Set] {3}
 ```
 
 ### Cartesian product of 2 sets
-#### _SuperSet.cartesianProduct(A,B)_
+##### _SuperSet.cartesianProduct(A,B)_
 
 <!---
 \begin{array}{c}
