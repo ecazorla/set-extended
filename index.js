@@ -9,6 +9,26 @@ class SuperSet extends Set {
         return cardinalCount;
     }
 
+    get powerSet () {
+        const powerSetCadinal = Math.pow(2, this.cardinal);
+        const setToArray = superSet.toArray(this);
+
+        let returnSet = new SuperSet();
+        for (let i = 0; i < powerSetCadinal; i++) {
+            const generatorString = i.toString(2).padStart(this.cardinal, "0");
+            let generatedSubset = new SuperSet();
+            for (let j = 0; j < generatorString.length; j++) {
+                if (generatorString[j] === '1') {
+                    generatedSubset.add(setToArray[j])
+                }
+            }
+
+            returnSet.add(generatedSubset);
+        }
+
+        return returnSet;
+    }
+
     difference(arg) {
         if (!fn.isSetOrSuperSet(arg)) {
             throw new Error(`${arg} is not a valid type set or superset`);
