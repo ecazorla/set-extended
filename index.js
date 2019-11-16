@@ -47,17 +47,17 @@ const superSet = {
         this.returnSet = new SuperSet();
         this.errorList = [];
         this.errorList = this.errorList.concat(fn.checkAllSet(args));
-    
+
         if (this.errorList.length > 0) {
             throw new Error(`${this.errorList.map(error => `arg[${error[1]}] ${error[0]} is not a valid type set or superset`).join(', ')}`);
         }
-    
+
         args.forEach(arg => {
             arg.forEach(value => {
                 this.returnSet.add(value);
             })
         });
-    
+
         return this.returnSet;
     },
 
@@ -65,7 +65,7 @@ const superSet = {
         this.returnSet = new SuperSet();
         this.errorList = [];
         this.errorList = this.errorList.concat(fn.checkAllSet(args));
-    
+
         if (this.errorList.length > 0) {
             throw new Error(`${this.errorList.map(error => `arg[${error[1]}] ${error[0]} is not a valid type set or superset`).join(', ')}`);
         }
@@ -87,19 +87,33 @@ const superSet = {
 
         return this.returnSet;
     },
-    
+
+    cartisianProduct: (...args) => {
+        this.setA = args[0];
+        this.setB = args[1];
+        this.returnSet = new SuperSet();
+
+        this.setA.forEach(setAvalue => {
+            this.setB.forEach(setBvalue => {
+                this.returnSet.add([setAvalue, setBvalue]);
+            });
+        });
+
+        return this.returnSet
+    },
+
     toArray: (arg) => {
         if (!fn.isSetOrSuperSet(arg)) {
             throw new Error('argument is not a valid type set or superset');
         }
-    
+
         this.setValues = arg.values();
         this.outputArray = [];
-    
+
         for (let value of this.setValues) {
             this.outputArray.push(value);
         }
-    
+
         return this.outputArray;
     },
 
