@@ -1,6 +1,6 @@
 {
   "name": "set-extended",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This module extends the default functionalities of the Set class built in JS",
   "main": "index.js",
   "scripts": {
