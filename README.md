@@ -1,13 +1,13 @@
-# set-extender
+# set-extended
 
 This module's aim is to expand the already available functionalities of the [Set Class]('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set') in JS to cover most of the usual operators when using applied [Set Theory]('https://en.wikipedia.org/wiki/Set_theory'), such as: Union, Intersection or Symetric Difference of sets, Power Set, Cartesian Product, and so on.
 
 ## Installation
 
-set-extender is available on npm package manager.
+set-extended is available on npm package manager.
 
 ```
-npm install set-extender
+npm install set-extended
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install set-extender
 First, import the module. I like to call it SuperSet, as it gives super powers to the Set class.
 
 ```
-const SuperSet = require('set-extender');
+const SuperSet = require('set-extended');
 ```
 
 ### Evaluate if a set is a subset of a set: 
