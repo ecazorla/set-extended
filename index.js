@@ -142,7 +142,7 @@ const superSet = {
         return this.returnSet;
     },
 
-    cartisianProduct: (...args) => {
+    cartesianProduct: (...args) => {
         this.setA = args[0];
         this.setB = args[1];
         this.returnSet = new SuperSet();
