@@ -1,7 +1,9 @@
 {
   "name": "set-extended",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This module extends the default functionalities of the Set class built in JS",
+  "homepage": "https://github.com/ecazorla/super-set",
+  "keywords": ["set", "math", "extend", "class", "superset", "theory"],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
