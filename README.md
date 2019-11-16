@@ -19,7 +19,7 @@ const SuperSet = require('set-extender');
 ```
 
 ### Evaluate if a set is a subset of a set: 
-#### MySet.subsetOf(A)
+> _MySet.subsetOf(A)_
 
 ![equation](https://latex.codecogs.com/svg.latex?A%20%3D%20%5C%7B1%2C%202%5C%7D%2C%20B%20%3D%20%5C%7B1%2C%202%2C%203%2C%204%2C%205%5C%7D%20%5Cimplies%20A%20%5Csubset%20B%2C%20A%20%5Cnsubseteq%20B%20%5C%5C)
 
@@ -37,7 +37,7 @@ false
 ```
 
 ### Union of sets: 
-#### _SuperSet.union(...args)_
+> _SuperSet.union(...args)_
 
 <!---
 \begin{array}{c}
@@ -62,7 +62,7 @@ SuperSet [Set] {1, 2, 3, 4, 5}
 ```
 
 ### Intersection of sets
-#### _SuperSet.intersection(...args)_
+> _SuperSet.intersection(...args)_
 
 <!---
 \begin{array}{c}
@@ -87,7 +87,7 @@ SuperSet [Set] {3}
 ```
 
 ### Cartesian product of 2 sets
-##### _SuperSet.cartesianProduct(A,B)_
+> _SuperSet.cartesianProduct(A,B)_
 
 <!---
 \begin{array}{c}
@@ -113,7 +113,7 @@ SuperSet [Set] { [ 1, 1 ], [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 2 ], [ 2, 3 ] }
 ```
 
 ### Difference of 2 sets
-#### _MySet.difference(A)_
+> _MySet.difference(A)_
 
 <!---
 \begin{array}{c}
@@ -138,7 +138,7 @@ SuperSet [Set] { 3, 4 }
 ```
 
 ### Symmetric Difference of 2 sets
-#### _MySet.symmetricDifference(A)_
+> _MySet.symmetricDifference(A)_
 
 Remember: The [Symmetric Difference]('https://en.wikipedia.org/wiki/Symmetric_difference') of two sets is the set of elements which are in either of the sets and not in their intersection.
 
@@ -165,7 +165,7 @@ SuperSet [Set] { 1, 2, 5, 6 }
 ```
 
 ### Cardinal of a Set
-#### _MySet.cardinal_
+> _MySet.cardinal_
 
 Remember: We name cardinal of a Set to it's size. Similar to `.length` on an array
 
@@ -189,7 +189,7 @@ console.log(A.cardinal)
 ```
 
 ### Power Set of a Set
-#### _MySet.powerSet_
+> _MySet.powerSet_
 
 Remember: The definition of the power set is the set of all the possibles subsets of a certain set: [Power Set]('https://en.wikipedia.org/wiki/Power_set')
 
