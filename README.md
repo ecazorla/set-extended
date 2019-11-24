@@ -27,12 +27,12 @@ A = \{1, 2\} \\
 B = \{1, 2, 3, 4, 5\} \\
 \implies \\
 A \subset B \\
-A \nsubseteq B \\
+B \nsubseteq A \\
 \end{array}
 --->
 
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?%5Cbegin%7Barray%7D%7Bc%7D%20A%20%3D%20%5C%7B1%2C%202%5C%7D%20%5C%5C%20B%20%3D%20%5C%7B1%2C%202%2C%203%2C%204%2C%205%5C%7D%20%5C%5C%20%5Cimplies%20%5C%5C%20A%20%5Csubset%20B%20%5C%5C%20A%20%5Cnsubseteq%20B%20%5C%5C%20%5Cend%7Barray%7D">
+<img src="https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cbegin%7Barray%7D%7Bc%7D%20A%20%3D%20%5C%7B1%2C%202%5C%7D%20%5C%5C%20B%20%3D%20%5C%7B1%2C%202%2C%203%2C%204%2C%205%5C%7D%20%5C%5C%20%5Cimplies%20%5C%5C%20A%20%5Csubset%20B%20%5C%5C%20B%20%5Cnsubseteq%20A%20%5C%5C%20%5Cend%7Barray%7D">
 </p>
 
 ```
